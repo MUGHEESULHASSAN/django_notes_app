@@ -1,6 +1,9 @@
 @Library('Shared')_
 pipeline{
     agent { label 'dev-server'}
+    triggers {
+        githubPush()
+    }
     
     stages{
         stage("Code clone"){
